@@ -19,7 +19,7 @@ function karmify (){
 function prepWatcher () {
     watcher.bundle()
         .on('error', gutil.log.bind(gutil, 'Browserify Error'))
-        .pipe(source('pb-dist.js'))
+        .pipe(source('dist.js'))
         .pipe(buffer())
         .pipe(gulp.dest(paths.dist))
         .pipe(gulp.dest(paths.server));
@@ -28,7 +28,7 @@ function prepWatcher () {
 function bundle() {
     karmify();
     prepWatcher();
-    return watcher
+    return watcher;
 }
 
 function initialBundle () {
@@ -45,8 +45,8 @@ watcher.transform(stringify, {
     appliesTo: { includeExtensions: ['.html'] },
     minify: true
 });
-watcher.transform('node-lessify', { textMode: true })
-watcher.on('update', bundle)
+watcher.transform('node-lessify', { textMode: true });
+watcher.on('update', bundle);
 watcher.on('log', gutil.log);
 
 module.exports = initialBundle;

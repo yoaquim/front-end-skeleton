@@ -24,7 +24,7 @@ module.exports = function () {
         })
         .bundle()
         .on('error', gutil.log.bind(gutil, 'Browserify Error'))
-        .pipe(source('pb-dist.js'))
+        .pipe(source('dist.js'))
         .pipe(buffer())
         .pipe(uglify())
         .pipe(gulp.dest(paths.dist))
