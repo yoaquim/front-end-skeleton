@@ -10,7 +10,7 @@ Incudes [karma](https://karma-runner.github.io/0.13/index.html), [browserify](ht
 
 `npm run setup` will install [gulp](http://gulpjs.com) and install all dependencies.
  
- `npm start` spins up a dummy page with the bumper.
+ `npm start` spins up a dummy page loaded with `dist.js`.
 
 ## Building
 
@@ -24,7 +24,7 @@ Output file, `dist.js`, will be under the `dist` directory.
 
 - `gulp build`: builds
 
-- `gulp server`: starts a test server that loads up a dummy hotel page, which loads the built script `dist.js` (under `dist` dir)
+- `gulp server`: starts a test server that loads up a dummy page, which loads the built script `dist.js` (under `dist` dir)
 
 - `gulp test`: runs tests
 
